@@ -7,6 +7,14 @@ import "../styles/index.css";
 
 //import your own components
 import Home from "./component/home.jsx";
+import SecondCounter from "./component/SecondCounter.jsx";
 
 //render your react application
-ReactDOM.render(<Home />, document.querySelector("#app"));
+let count = 0;
+setInterval(() => {
+	ReactDOM.render(
+		<SecondCounter count={count} />,
+		document.querySelector("#app")
+	);
+	count++;
+}, 1000);
